@@ -10,6 +10,7 @@
   "author": "farodin91",
   "license": "ISC",
   "dependencies": {
-    "path-to-regexp": "^1.1.1"
+    "path-to-regexp": "^1.1.1",
+    "socket-middleware": "https://github.com/farodin91/socket-middleware.git"
   }
 }
