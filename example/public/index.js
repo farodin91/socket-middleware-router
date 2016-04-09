@@ -6,3 +6,4 @@ socket.on('response', function (data) {
 socket.emit('request',{path:"update",data:{name:"test"}});
 socket.emit('request',{path:"init/12",data:{name:"test"}});
 socket.emit('request',{path:"init",data:{name:"test"}});
+socket.emit('request',{path:"test/init",data:{name:"test"}});

@@ -24,8 +24,16 @@ router.request('init/:id', function*(next){
   console.log(this.params);
   this.body = "init " + this.params["id"];
 });
+var test = new Router();
+test.request('init', function*(next){
+  console.log(this.params);
+  this.body = "test init";
+});
+router.use('test/', test.routes());
 
 mw.use(router.routes());
+
+
 mw.use(function*(next){
   //this.send('hi');
   this.body = "sdsds";

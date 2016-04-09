@@ -7,24 +7,26 @@ var Middleware = require('socket-middleware');
 var Router = require('socket-middleware-router');
 var http = require('http').createServer().listen(3000);
 
-var mv = new Middleware();
 
+var mw = new Middleware();
+mw.use(logger());
 var router = new Router();
 
 router.request('init', function*(next){
-  this.send('init');
+  this.body = "init";
 });
 
 router.request('init/:id', function*(next){
-  this.send('init');
+  console.log(this.params);
+  this.body = "init " + this.params["id"];
 });
 
-mv.use(router.routes());
-
-mv.use(function*(next){
-  this.send('hi');
+mw.use(router.routes());
+mw.use(function*(next){
+  //this.send('hi');
+  this.body = "sdsds";
   yield next;
 });
 
-mv.attach(http);
+mw.attach(http);
 ```
