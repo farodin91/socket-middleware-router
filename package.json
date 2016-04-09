@@ -1,5 +1,5 @@
 {
-  "name": "socket-middleware",
+  "name": "socket-middleware-router",
   "version": "0.1.0",
   "description": "testing",
   "main": "index.js",
